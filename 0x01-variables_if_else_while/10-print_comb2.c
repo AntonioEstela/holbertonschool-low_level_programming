@@ -1,18 +1,16 @@
 #include <stdio.h>
 /**
- * main - possible combinations of single-digit numbers.
- *
- * Return: Always 0 (Success)
-*/
+ * main - entry block
+ * @void: no argument
+ * Return: 0
+ **/
 int main(void)
 {
-	int num;
-	int num2;
-	int sum;
+	int num, num2, sum;
 
-	for (num = 0; num < 99; num++)
+	for ( = 0; num <= 9; num++)
 	{
-		for (num2 = 0; num2 < 10; num++)
+		for (num2 = 0; num2 <= 9; num2++)
 		{
 			putchar(num + '0');
 			putchar(num2 + '0');
@@ -21,6 +19,7 @@ int main(void)
 				putchar(',');
 				putchar(' ');
 			}
+			sum++;
 		}
 	}
 	putchar('\n');
