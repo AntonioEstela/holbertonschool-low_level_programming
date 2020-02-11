@@ -2,9 +2,6 @@
 /**
  * print_times_table - prints the n times table
  * @n: integer
- * @num: integer
- * @num2: integer
- * @mul: integer
  * @void: no argument
  */
 void print_times_table(int n)
@@ -12,18 +9,14 @@ void print_times_table(int n)
 	int num, num2, mul;
 
 	if (n > 15 || n < 0)
-	{
 		return;
-	}
 	for (num = 0; num <= n; num++)
 	{
 		for (num2 = 0; num2 <= n; num2++)
 		{
 			mul = (num *num2);
 			if (num2 == 0)
-			{
 				_putchar(mul + '0');
-			}
 			else if (mul <= 9)
 			{
 				_putchar(',');
