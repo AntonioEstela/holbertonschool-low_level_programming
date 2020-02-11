@@ -7,8 +7,10 @@
  * @mul: integer
  * @void: no argument
  */
-void print_times_table(int n, num, num2, mul)
+void print_times_table(int n)
 {
+	int num, num2, mul;
+
 	if (n > 15 || n < 0)
 	{
 		return;
