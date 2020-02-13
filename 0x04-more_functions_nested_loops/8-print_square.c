@@ -1,5 +1,8 @@
 #include "holberton.h"
-
+/**
+ * print_square -  function that draws a square on the terminal.
+ * @size: integer
+*/
 void print_square(int size)
 {
 	int x, y;
