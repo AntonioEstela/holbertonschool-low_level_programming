@@ -1,5 +1,8 @@
 #include "holberton.h"
-
+/**
+ * print_triangle -  function that prints a triangle, followed by a new line.
+ * @size: integer
+*/
 void print_triangle(int size)
 {
 	int width, height, prints;
@@ -8,7 +11,7 @@ void print_triangle(int size)
 	{
 		for (height = 1; height <= size; height++)
 		{
-			for(width = 1; width <= (size - height); width++)
+			for (width = 1; width <= (size - height); width++)
 			{
 				_putchar(' ');
 			}
