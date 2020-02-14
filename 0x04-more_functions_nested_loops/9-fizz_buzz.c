@@ -9,15 +9,15 @@
 */
 int main(void)
 {
-	int num = 1;
+	int num;
 
-	for (; num <= 100; num++)
+	for (num = 1; num <= 100; num++)
 	{
-		if (num <= 100 && num != 1)
+		if (num % 3 == 0 && num % 5 == 0)
 		{
-			printf(" ");
+			printf("FizzBuzz");
 		}
-		if (num % 3 == 0)
+		else if (num % 3 == 0)
 		{
 			printf("Fizz");
 		}
@@ -25,13 +25,13 @@ int main(void)
 		{
 			printf("Buzz");
 		}
-		else if (num % 3 == 0 && num % 5 == 0)
-		{
-			printf("Fizz Buzz");
-		}
 		else
 		{
-			printf("%i", num);
+			printf("%d", num);
+		}
+				if (num < 100)
+		{
+			printf(" ");
 		}
 	}
 	printf("\n");
