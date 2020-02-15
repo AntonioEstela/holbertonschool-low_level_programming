@@ -5,8 +5,6 @@
 */
 void print_number(int n)
 {
-	int abs = n * -1;
-
 	if (n >= 1000 && n <= 9999)
 	{
 		_putchar(n / 1000 + '0');
@@ -28,9 +26,11 @@ void print_number(int n)
 
 	else if (n < 0)
 	{
+		n = n * -1;
+
 		_putchar('-');
-		_putchar(abs / 10 + '0');
-		_putchar(abs % 10 + '0');
+		_putchar(n / 10 + '0');
+		_putchar(n % 10 + '0');
 	}
 	else
 	{
