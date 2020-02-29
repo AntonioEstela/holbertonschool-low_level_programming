@@ -10,24 +10,18 @@ int main(int argc, char *argv[])
 {
 	int i, result = 0;
 
-	if (argc < 3)
+	for (i = 1; i < argc; i++)
 	{
-		printf("0");
-		printf("\n");
-	}
-
-	else
-	{
-		for (i = 1; i < argc; i++)
+		if (atoi(argv[i]))
 		{
-			if (!atoi(argv[i]))
-			{
-				printf("%s\n", "Error");
-				return (1);
-			}
 			result += atoi(argv[i]);
 		}
-		printf("%d\n", result);
+		else
+		{
+			printf("Error\n");
+			return (1);
+		}
 	}
+	printf("%d\n", result);
 	return (0);
 }
