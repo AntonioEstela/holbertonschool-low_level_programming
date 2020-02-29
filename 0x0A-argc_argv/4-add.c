@@ -8,11 +8,11 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, result = 0;
+	int i, result;
 
-	if (argc < 3)
+	if (argc < 1)
 	{
-		printf("0\n");
+		return (0);
 	}
 	for (i = 1; i < argc; i++)
 	{
