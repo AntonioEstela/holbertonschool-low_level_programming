@@ -31,7 +31,7 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	if (str == NULL)
+	if (str == 0)
 	{
 		return (NULL);
 	}
