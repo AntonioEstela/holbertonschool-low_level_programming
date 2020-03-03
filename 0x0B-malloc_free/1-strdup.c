@@ -25,16 +25,18 @@ char *_strdup(char *str)
 	int i;
 	char *dest;
 
-	dest = malloc(sizeof(str) * _strlen(str + 1));
+	if (str == 0)
+	{
+		return (NULL);
+	}
+
+	dest = malloc(sizeof(str) * _strlen(str + 1))
 
 	if (dest == NULL)
 	{
 		return (NULL);
 	}
-	if (str == 0)
-	{
-		return (NULL);
-	}
+
 	else
 	{
 		for (i = 0; str[i] != '\0'; i++)
