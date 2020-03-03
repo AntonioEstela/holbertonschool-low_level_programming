@@ -30,20 +30,17 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	dest = malloc(sizeof(str) * _strlen(str + 1));
+	dest = malloc(sizeof(str) * _strlen(str));
 
 	if (dest == NULL)
 	{
 		return (NULL);
 	}
 
-	else
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (i = 0; str[i] != '\0'; i++)
-		{
-			dest[i] = str[i];
-		}
-		dest[i] = '\0';
+		dest[i] = str[i];
 	}
+	dest[i] = '\0';
 	return (dest);
 }
