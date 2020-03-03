@@ -37,11 +37,11 @@ char *_strdup(char *str)
 	}
 	else
 	{
-		for (i = 0; *(str + i) != '\0'; i++)
+		for (i = 0; str[i] != '\0'; i++)
 		{
-			*(dest + i) = *(str + i);
+			dest[i] = str[i];
 		}
-		*(dest + i) = '\0';
+		dest[i] = '\0';
 	}
 	return (dest);
 }
