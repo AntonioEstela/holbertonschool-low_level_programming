@@ -21,6 +21,10 @@ char *create_array(unsigned int size, char c)
 	{
 		return (NULL);
 	}
+	else if (arr == 0)
+	{
+		return (NULL);
+	}
 	else
 	{
 		return (arr);
