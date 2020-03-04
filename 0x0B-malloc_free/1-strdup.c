@@ -23,12 +23,12 @@ char *_strdup(char *str)
 	}
 
 	dest = malloc(sizeof(char) * (count + 1));
-	
+
 	if (dest == 0)
 	{
 		return (NULL);
 	}
-	
+
 	for (i = 0; *(str + i) != '\0'; i++)
 	{
 		*(dest + i) = *(str + i);
