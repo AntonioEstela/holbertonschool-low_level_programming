@@ -22,7 +22,7 @@ int _strlen(char *s)
  */
 char *_strdup(char *str)
 {
-	int i;
+	int i, count;
 	char *dest;
 
 	if (str == 0)
@@ -30,7 +30,14 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	dest = malloc(sizeof(char) * _strlen(str + 1));
+	count = 0;
+
+	while (*(str + count) != '\0')
+	{
+		count++;
+	}
+
+	dest = malloc(sizeof(char) * (count + 1));
 	
 	if (dest == 0)
 	{
