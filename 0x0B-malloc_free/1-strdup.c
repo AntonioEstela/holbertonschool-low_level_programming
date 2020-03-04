@@ -22,25 +22,28 @@ int _strlen(char *s)
  */
 char *_strdup(char *str)
 {
-	int i;
+	int count;
 	char *dest;
 
 	if (str == 0)
 	{
 		return (NULL);
 	}
+	
+	dest = malloc(sizeof(str) * _strlen(str));
 
-	dest = malloc(sizeof(str) * _strlen(str + 1));
-
-	if (dest == NULL)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
-
-	for (i = 0; str[i] != '\0'; i++)
+	
+	else
 	{
-		dest[i] = str[i];
+		for (count = 0; *(str + count); count++)
+		{
+			*(dest + count) = *(str + count);
+		}
+		*(dest + count) = '\0';
 	}
-	dest[i] = '\0';
 	return (dest);
 }
