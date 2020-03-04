@@ -8,7 +8,17 @@
 char *str_concat(char *s1, char *s2)
 {
 	unsigned int i, j, k, l;
+	int size;
 	char *dest;
+
+	if (s1 == NULL)
+	{
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
 /* code to find the length of s1 and s2 */
 	i = 0;
 	while (*(s1 + i) != '\0')
@@ -21,15 +31,9 @@ char *str_concat(char *s1, char *s2)
 		j++;
 	}
 /* code for concatenates two strings. */
-	if (s1 == NULL)
-	{
-		s1 = "";
-	}
-	if (s2 == NULL)
-	{
-		s2 = "";
-	}
-	dest = malloc(sizeof(char) * (i + j + 1));
+
+	size = i + j;
+	dest = malloc(sizeof(char) * (size + 1));
 	if (dest == NULL)
 	{
 		return (NULL);
@@ -40,7 +44,7 @@ char *str_concat(char *s1, char *s2)
 	}
 	for (l = 0; l < j; l++)
 	{
-		*(dest + (i + l)) = *(s2 + l);
+		*(dest + (k + l)) = *(s2 + l);
 	}
 	return (dest);
 }
