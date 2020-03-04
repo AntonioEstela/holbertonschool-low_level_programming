@@ -7,7 +7,7 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	int i, j, k, l;
+	unsigned int i, j, k, l;
 	char *dest;
 /* code to find the length of s1 and s2 */
 	i = 0;
