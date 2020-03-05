@@ -40,19 +40,19 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	j = _strlen(s2);
 
 	size = i + j;
-	dest = malloc(sizeof(char) * size);
+	dest = malloc(sizeof(char) * size + 1);
 	if (dest == NULL)
+	{
 		return (NULL);
-
+	}
 	if (n >= j)
 	{
-		j = n;
+		for (l = 0; l < n; l++)
+		{
+			*(dest + l) = *(s2 + l);
+		}
+		*(dest + l) = '\0';
 	}
-	for (l = 0; l < n; l++)
-	{
-		*(dest + l) = *(s2 + l);
-	}
-	*(dest + l) = '\0';
 	for (k = 0; k < i; k++)
 	{
 		*(dest + k) = *(s1 + k);
