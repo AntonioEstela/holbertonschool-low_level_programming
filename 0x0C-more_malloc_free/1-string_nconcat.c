@@ -42,17 +42,17 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	size = i + j;
 	dest = malloc(sizeof(char) * size);
 	if (dest == NULL)
-	{
 		return (NULL);
-	}
+
 	if (n >= j)
 	{
-		for (l = 0; l < n; l++)
-		{
-			*(dest + l) = *(s2 + l);
-		}
-		*(dest + l) = '\0';
+		j = n;
 	}
+	for (l = 0; l < n; l++)
+	{
+		*(dest + l) = *(s2 + l);
+	}
+	*(dest + l) = '\0';
 	for (k = 0; k < i; k++)
 	{
 		*(dest + k) = *(s1 + k);
