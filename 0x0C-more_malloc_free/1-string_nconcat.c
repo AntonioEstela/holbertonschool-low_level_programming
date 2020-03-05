@@ -1,9 +1,25 @@
 #include "holberton.h"
-
 /**
- * string_nconcat -
- *
- * Return: 
+ * _strlen - function that returns the length of a string..
+ * @s: string
+ * Return: the value of the variable count.
+ */
+int _strlen(char *s)
+{
+	int count = 0;
+
+	while (s[count] != '\0')
+	{
+		count++;
+	}
+	return (count);
+}
+/**
+ * string_nconcat - function that concatenates two strings.
+ * @s1: string 1
+ * @s2: string 2
+ * @n: integer
+ * Return: the value of dest or NULL
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
@@ -20,20 +36,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	}
 
-	/* code to find the length of s1 and s2 */
-	i = 0;
-	while (*(s1 + i) != '\0')
-	{
-		i++;
-	}
-	j = 0;
-	while (*(s2 + j) != '\0')
-	{
-		j++;
-	}
-	/* code for concatenates two strings. */
-	size = i + j;
+	i = _strlen(s1);
+	j = _strlen(s2);
 
+	size = i + j;
 	dest = malloc(sizeof(char) * size);
 	if (dest == NULL)
 	{
@@ -47,17 +53,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 		*(dest + l) = '\0';
 	}
-	else
-	{	
-		for (k= 0; k < i; k++)
-		{
-			*(dest + k) = *(s1 + k);
-		}
-		for (l = 0; l < n; l++)
-		{
-			*(dest + (k + l)) = *(s2 + l);
-		}
-		*(dest + (k + l)) = '\0';
+	for (k = 0; k < i; k++)
+	{
+		*(dest + k) = *(s1 + k);
 	}
+	for (l = 0; l < n; l++)
+	{
+		*(dest + (k + l)) = *(s2 + l);
+	}
+		*(dest + (k + l)) = '\0';
 	return (dest);
 }
