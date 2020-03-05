@@ -38,23 +38,17 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	i = _strlen(s1);
 	j = _strlen(s2);
+	size = i + j;
 
 	if (n >= j)
-	{
 		n = j;
-	}
-	
-	size = i + j;
+
 	dest = malloc(sizeof(char) * size + 1);
 	if (dest == NULL)
 	{
 		return (NULL);
 	}
-	for (l = 0; l < n; l++)
-	{
-		*(dest + l) = *(s2 + l);
-	}
-		for (k = 0; k < i; k++)
+	for (k = 0; k < i; k++)
 	{
 		*(dest + k) = *(s1 + k);
 	}
