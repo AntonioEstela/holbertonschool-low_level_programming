@@ -54,8 +54,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	for (l = 0; l < n; l++)
 	{
-		*(dest + (k + l)) = *(s2 + l);
+		*(dest + (i + l)) = *(s2 + l);
 	}
-	*(dest + (k + l)) = '\0';
+	*(dest + (i + l)) = '\0';
 	return (dest);
 }
