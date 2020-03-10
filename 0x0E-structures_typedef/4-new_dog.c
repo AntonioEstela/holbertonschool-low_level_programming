@@ -1,5 +1,22 @@
 #include "dog.h"
 /**
+ * _strcpy - function that copies the string scr to dest
+ * @dest: character
+ * @src: character
+ * Return: empty
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int count = 0;
+
+	for (; src[count] != '\0'; count++)
+	{
+		dest[count] = src[count];
+	}
+	dest[count] = '\0';
+	return (dest);
+}
+/**
  * _strlen - function that returns the length of a string..
  * @s: string
  * Return: the value of the variable count.
@@ -24,43 +41,42 @@ int _strlen(char *s)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *nd;
-	int i, j, k, l;
+	int i, j;
 	int total_size_name, total_size_owner;
+	char *cop_name, *cop_owner;
 
+	i = _strlen(name);
+	j = _strlen(owner);
 	if (name == NULL || owner == NULL)
 	{
+		return (NULL);
+	}
+
+	total_size_name = i + 1;
+	total_size_owner = j + 1;
+	cop_name = malloc(sizeof(char) * total_size_name);
+	if (cop_name == NULL)
+	{
+		return (NULL);
+	}
+	cop_owner = malloc(sizeof(char) * total_size_owner);
+	if (cop_owner == NULL)
+	{
+		free(cop_name);
 		return (NULL);
 	}
 	nd = malloc(sizeof(dog_t));
 	if (nd == NULL)
 	{
+		free(cop_name);
+		free(cop_owner);
 		return (NULL);
 	}
-	i = _strlen(name);
-	j = _strlen(owner);
-	total_size_name = i + 1;
-	total_size_owner = j + 1;
-	(*nd).name = malloc(sizeof(char) * total_size_name);
-	if ((*nd).name == NULL)
-	{
-		free(nd);
-		return (NULL);
-	}
-	for (k = 0; k < total_size_name; k++)
-	{
-		*((*nd).name + k) = *(name + k);
-	}
+	_strcpy(cop_name, name);
+	_strcpy(cop_owner, owner);
+
+	(*nd).name = name;
 	(*nd).age = age;
-	(*nd).owner = malloc(sizeof(char) * total_size_owner);
-	if ((*nd).owner == NULL)
-	{
-		free((*nd).name);
-		free(nd);
-		return (NULL);
-	}
-	for (l = 0; l < total_size_owner; l++)
-	{
-		*((*nd).owner + k) = *(owner + k);
-	}
+	(*nd).owner = owner;
 	return (nd);
 }
