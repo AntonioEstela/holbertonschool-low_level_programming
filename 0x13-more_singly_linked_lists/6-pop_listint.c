@@ -10,7 +10,7 @@ int pop_listint(listint_t **head)
 	int node_data;
 
 
-	if (head == NULL)
+	if (*head == NULL)
 	{
 		return (0);
 	}
