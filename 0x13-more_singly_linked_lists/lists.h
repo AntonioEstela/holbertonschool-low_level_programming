@@ -1,6 +1,10 @@
 #ifndef LISTS_H
 #define LISTS_H
 
+#define DONOT '\0'
+#define COPY head
+#define MYCODE next
+
 #include <stdio.h>
 #include <stdlib.h>
 /**
