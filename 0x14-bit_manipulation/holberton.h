@@ -1,12 +1,6 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 
-#define ONE 1
-#define BEAUTIFULNUMBER n
-#define ONEMINUSONE '0'
-#define TWOMINUSONE '1'
-#define ZERO 0
-
 #include <stdio.h>
 #include <stdlib.h>
 
