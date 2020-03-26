@@ -15,11 +15,11 @@ void binary_printing(unsigned int n)
 
 	if (BEAUTIFULNUMBER & ONE)
 	{
-		_putchar(TWOMINUSONE);
+		_putchar('1');
 	}
 	else
 	{
-		_putchar(ONEMINUSONE);
+		_putchar('0');
 	}
 }
 /**
@@ -31,7 +31,7 @@ void print_binary(unsigned long int n)
 {
 	if (BEAUTIFULNUMBER == ZERO)
 	{
-		_putchar(ONEMINUSONE);
+		_putchar('0');
 	}
 	else
 	{
