@@ -13,7 +13,7 @@ void binary_printing(unsigned int n)
 
 	binary_printing(BEAUTIFULNUMBER >> ONE);
 
-	if (BEAUTIFULNUMBER & ONE)
+	if ((BEAUTIFULNUMBER & ONE) == ONE)
 	{
 		_putchar('1');
 	}
