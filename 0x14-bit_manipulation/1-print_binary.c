@@ -6,18 +6,18 @@
  */
 void binary_printing(unsigned int num)
 {
-	if (num == ZERO)
+	if (num == 0)
 	{
 		return;
 	}
 
 	binary_printing(num >> 1);
 
-	if ((num & ONE) == ONE)
+	if ((num & 1) == 1)
 	{
 		_putchar('1');
 	}
-	if ((num & ONE) == ZERO)
+	if ((num & 1) == 0)
 	{
 		_putchar('0');
 	}
@@ -29,7 +29,7 @@ void binary_printing(unsigned int num)
  */
 void print_binary(unsigned long int n)
 {
-	if (BEAUTIFULNUMBER == ZERO)
+	if (n == 0)
 	{
 		_putchar('0');	
 	}
