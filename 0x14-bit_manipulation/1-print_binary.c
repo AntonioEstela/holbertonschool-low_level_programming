@@ -17,7 +17,7 @@ void binary_printing(unsigned int n)
 	{
 		_putchar('1');
 	}
-	else
+	if ((BEAUTIFULNUMBER & ONE) == ZERO)
 	{
 		_putchar('0');
 	}
