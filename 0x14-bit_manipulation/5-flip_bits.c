@@ -9,11 +9,11 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int i = 0, z;
+	unsigned int i = 0;
 
-	for (z = n ^ m; z != 0; z >>= 1)
+	for (n = n ^ m; n; n >>= 1)
 	{
-		i += (z & 1);
+		i += n & 1;
 	}
 
 	return (i);
