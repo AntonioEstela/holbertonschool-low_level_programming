@@ -27,13 +27,16 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	rd1 = read(file1, buffer, 1024);
+	do
+	{
+		rd1 = read(file1, buffer, 1024);
+		num_char = write(file2, buffer, rd1);
+	} while (rd1 == 1024);
 	if (rd1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	num_char = write(file2, buffer, rd1);
 	if (num_char == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
