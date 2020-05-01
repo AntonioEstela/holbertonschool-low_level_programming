@@ -2,7 +2,7 @@
 /**
  * print_dlistint - Function that prints all the elements of a DLL.
  * @h: pointer to the head of the double linked list.
- * Return: The number of nodes in the double linked list.
+ * Return: The number of nodese in the double linked list.
  */
 size_t print_dlistint(const dlistint_t *h)
 {
