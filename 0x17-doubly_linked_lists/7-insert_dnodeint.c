@@ -1,10 +1,10 @@
 #include "lists.h"
 /**
- * 
- * 
- * 
- * 
- * 
+ * insert_dnodeint_at_index - Function that inserts a new node at idx position.
+ * @h: Pointer to the head of the double linked list.
+ * @idx: is the index of the list where the new node should be added.
+ * @n: number to add.
+ * Return: NULL or the addres of the new node
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
@@ -25,10 +25,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		(*h) = new;
 		return (new);
 	}
-	
+
 	while (list != NULL)
 	{
-		if (i == (idx -1))
+		if (i == (idx - 1))
 		{
 			new->prev = list;
 			new->next = list->next;
