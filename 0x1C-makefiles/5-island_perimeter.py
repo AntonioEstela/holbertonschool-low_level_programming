@@ -10,7 +10,6 @@ def island_perimeter(gird):
     for y in range(len(gird)):
         for x in range(len(gird[y])):
             if gird[y][x] == 1:
-                print('Lado')
                 Perimeter += 4
 
                 try:
