@@ -2,29 +2,21 @@
 """ Island Perimeter module """
 
 
-def island_perimeter(gird):
+def island_perimeter(grid):
     """Function that returns the perimeter of the island described in grid"""
 
     Perimeter = 0
 
-    for y in range(len(gird)):
-        for x in range(len(gird[0])):
-            if gird[y][x] == 1:
+    for y in range(len(grid)):
+        for x in range(len(grid[0])):
+            if grid[y][x] == 1:
                 Perimeter += 4
-                try:
-                    if gird[y][x - 1] == 1:
-                        Perimeter -= 1
+                if x > 0:
+                    if grid[y][x - 1] == 1:
+                        Perimeter -= 2
+                if y > 0:
+                    if grid[y - 1][x] == 1:
+                        Perimeter -= 2
 
-                    if gird[y][x + 1] == 1:
-                        Perimeter -= 1
-
-                    if gird[y - 1][x] == 1:
-                        Perimeter -= 1
-
-                    if gird[y + 1][x] == 1:
-                        Perimeter -= 1
-
-                except Exception:
-                    pass
 
     return Perimeter
