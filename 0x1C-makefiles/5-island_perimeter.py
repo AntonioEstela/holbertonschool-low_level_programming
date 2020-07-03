@@ -10,20 +10,20 @@ def island_perimeter(gird):
     for y in range(len(gird)):
         for x in range(len(gird[y])):
             if gird[y][x] == 1:
-                Perimeter += 4
-
+                if Perimeter == 0:
+                    Perimeter += 4
                 try:
                     if gird[y][x - 1] == 1:
-                        Perimeter -= 1
+                        Perimeter += 1
 
                     if gird[y][x + 1] == 1:
-                        Perimeter -= 1
+                        Perimeter += 1
 
                     if gird[y - 1][x] == 1:
-                        Perimeter -= 1
+                        Perimeter += 1
 
                     if gird[y + 1][x] == 1:
-                        Perimeter -= 1
+                        Perimeter += 1
 
                 except Exception:
                     pass
